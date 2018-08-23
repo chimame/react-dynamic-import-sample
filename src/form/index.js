@@ -1,4 +1,5 @@
 import React from 'react'
+import NextButton from './button'
 
 export default ({inputTypes, next}) => {
   const components = []
@@ -7,6 +8,7 @@ export default ({inputTypes, next}) => {
   return (
     <div>
       {components.map((component, i) => React.createElement(component, {key: i, inputTypes, next}))}
+      <NextButton type={inputTypes[inputTypes.length - 1]} next={next} />
     </div>
   )
 }
